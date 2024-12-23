@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reply Comments - מכונת התגובות המבריקה</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="bg-gray-100 text-gray-800 leading-relaxed">
+    <!-- Header -->
+    <header class="bg-white shadow-md fixed w-full top-0 z-50">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex items-center justify-between">
+                <div class="logo text-2xl font-bold">Zevik's Tools</div>
+                <nav class="hidden md:flex space-x-6">
+                    <a href="index.html" class="hover:text-gray-700">בית</a>
+                    <a href="#features" class="hover:text-gray-700">תכונות</a>
+                    <a href="#demo" class="hover:text-gray-700">הדגמה</a>
+                    <a href="#faq" class="hover:text-gray-700">שאלות נפוצות</a>
+                    <a href="#contact" class="hover:text-gray-700">צור קשר</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="mt-16 pt-8">
+        <!-- Hero Section -->
+        <section class="bg-indigo-700 text-white py-20">
+            <div class="container mx-auto px-4">
+                <div class="max-w-4xl mx-auto text-center">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-6">מכונת התגובות המבריקה 💬</h1>
+                    <p class="text-xl mb-4">הדרך החכמה להגיב ל-200 תגובות בפוסט, בלי לבזבז זמן ובלי לחטוף חסימות!</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features -->
+        <section id="features" class="py-16">
+            <div class="container mx-auto px-4">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-white rounded-lg shadow-lg p-6">
+                        <div class="text-indigo-600 text-4xl mb-4 text-center">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-4 text-center">חוסך זמן יקר</h3>
+                        <p class="text-gray-600">תגובות אוטומטיות חכמות שחוסכות שעות של עבודה</p>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-lg p-6">
+                        <div class="text-indigo-600 text-4xl mb-4 text-center">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-4 text-center">בטוח לשימוש</h3>
+                        <p class="text-gray-600">פועל בקצב מותאם למניעת חסימות מפייסבוק</p>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-lg p-6">
+                        <div class="text-indigo-600 text-4xl mb-4 text-center">
+                            <i class="fas fa-magic"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-4 text-center">תגובות חכמות</h3>
+                        <p class="text-gray-600">מגיב אוטומטית עם תיוג אישי לכל משתמש</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Demo Video -->
+        <section id="demo" class="py-16 bg-gray-50">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold text-center mb-12">ראו את התוסף בפעולה</h2>
+                <div class="max-w-4xl mx-auto">
+                    <div class="aspect-w-16 aspect-h-9">
+                        <iframe class="w-full h-96 rounded-lg shadow-lg" src="/api/placeholder/800/450" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="py-16">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold text-center mb-12">שאלות נפוצות</h2>
+                <div class="max-w-3xl mx-auto space-y-4">
+                    <div x-data="{ open: false }" class="bg-white rounded-lg shadow-md">
+                        <button @click="open = !open" class="w-full p-6 text-right flex justify-between items-center">
+                            <h3 class="text-xl font-semibold">האם ניתן להגיב לכל פוסט בפייסבוק או רק לפוסטים שלי?</h3>
+                            <i class="fas" :class="open ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
+                        </button>
+                        <div x-show="open" class="p-6 pt-0">
+                            <p class="text-gray-600">ניתן להגיב לכל פוסט, לא משנה אם אתם העלתם אותו או לא.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Additional FAQ items -->
+                    <!-- Copy the above div structure for each FAQ item -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact" class="py-16 bg-gray-50">
+            <div class="container mx-auto px-4">
+                <div class="max-w-2xl mx-auto text-center">
+                    <h2 class="text-3xl font-bold mb-8">מתעניינים?</h2>
+                    <div class="space-y-4">
+                        <a href="https://wa.me/972546609385" target="_blank" class="inline-flex items-center justify-center bg-green-500 text-white px-6 py-3 rounded-lg text-lg font-semibold hover:bg-green-600 transition-colors">
+                            <i class="fab fa-whatsapp ml-2"></i>
+                            לפרטים בוואטסאפ
+                        </a>
+                        <div class="block">
+                            <a href="mailto:fb.tools.zevik@gmail.com" class="inline-flex items-center justify-center bg-indigo-600 text-white px-6 py-3 rounded-lg text-lg font-semibold hover:bg-indigo-700 transition-colors">
+                                <i class="far fa-envelope ml-2"></i>
+                                שליחת מייל
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4 text-center">
+            <p>© 2024 Zevik's Tools</p>
+        </div>
+    </footer>
+
+    <!-- Alpine.js for FAQ accordion -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/2.8.2/alpine.js"></script>
+</body>
+</html>
