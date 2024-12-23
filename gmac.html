@@ -83,7 +83,7 @@
             <div class="container mx-auto px-4">
                 <h2 class="text-3xl font-bold text-center mb-12">שאלות נפוצות</h2>
                 <div class="max-w-3xl mx-auto space-y-4">
-                    <template x-data="{ faqs: [
+                    <div x-data="{ faqs: [
                         {
                             question: 'האם ניתן להשתמש אם התוסף עבור כמה קבוצות שאני מנהל/ת?',
                             answer: 'כן. ובנוסף, עבור כל קבוצה התוסף יצור קובץ נפרד שאליו ישמרו הנתונים.'
@@ -112,7 +112,7 @@
                             question: 'לאן ישלחו החשבוניות?',
                             answer: 'החשבוניות נשלחות באופן אוטומטי לאימייל שאיתו נרשמתם שזהו אותו אימייל של חשבון הכרום תחתיו התקנתם את התוסף. לא ניתן להחליף את האימייל לקבלת חשבונית ללא החלפה של חשבון הכרום שעליו התוסף מותקן ותחתיו חשבון הפייסבוק שלכם פעיל.'
                         }
-                    ]}" x-init>
+                    ]}">
                         <template x-for="(faq, index) in faqs" :key="index">
                             <div x-data="{ open: false }" class="bg-white rounded-lg shadow-md">
                                 <button @click="open = !open" class="w-full p-6 text-right flex justify-between items-center">
@@ -124,7 +124,7 @@
                                 </div>
                             </div>
                         </template>
-                    </template>
+                    </div>
                 </div>
             </div>
         </section>
