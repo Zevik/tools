@@ -4,10 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Groups Monitor - סורק קבוצות, מוצאת לקוחות</title>
+    <!-- Alpine.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/2.8.2/alpine.js"></script>
+    <!-- Tailwind CSS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
+
 <body class="bg-gray-100 text-gray-800 leading-relaxed">
     <!-- Header -->
     <header class="bg-white shadow-md fixed w-full top-0 z-50">
@@ -52,7 +56,9 @@
                         <div class="flex items-start">
                             <div class="flex-shrink-0 w-10 h-10 bg-indigo-600 text-white rounded-full flex items-center justify-center">1</div>
                             <div class="mr-4">
-                                <p class="text-lg">מגדירים מראש את כל המילים בהם נרצה לאתר פוסטים בקבוצות שבחרנו</p>
+                                <p class="text-lg">
+                                    מגדירים מראש את כל המילים בהם נרצה לאתר פוסטים בקבוצות שבחרנו
+                                </p>
                             </div>
                         </div>
                         <div class="flex items-start">
@@ -79,7 +85,7 @@
         </section>
 
         <!-- Features -->
-        <section class="py-16 bg-gray-50">
+        <section class="py-16 bg-gray-50" id="features">
             <div class="container mx-auto px-4">
                 <h2 class="text-3xl font-bold text-center mb-12">למה GM?</h2>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -111,78 +117,87 @@
         <!-- Demo Video -->
         <section id="demo" class="py-16">
             <div class="container mx-auto px-4">
-                <h2 class="text-3xl font-bold text-center mb-12">GM - הכלי המנצח בניטור קבוצות בפייסבוק</h2>
-                 <div class="max-w-4xl mx-auto">
-                    <img src="/api/placeholder/800/450" alt="Groups Monitor Demo" class="rounded-lg shadow-lg w-full">
-                 </div>
+                <h2 class="text-3xl font-bold text-center mb-12">
+                    GM - הכלי המנצח בניטור קבוצות בפייסבוק
+                </h2>
+                <div class="max-w-4xl mx-auto">
+                    <!-- placeholder image/demo -->
+                    <img
+                        src="/api/placeholder/800/450"
+                        alt="Groups Monitor Demo"
+                        class="rounded-lg shadow-lg w-full"
+                    >
+                </div>
             </div>
         </section>
 
         <!-- FAQ Section -->
-       <section id="faq" class="py-16 bg-gray-50">
+        <section id="faq" class="py-16 bg-gray-50">
             <div class="container mx-auto px-4">
                 <h2 class="text-3xl font-bold text-center mb-12">שאלות נפוצות</h2>
-                <div class="max-w-3xl mx-auto space-y-4" >
-                   <div  x-data="{
-                    faqs: [
-                        {
+                <!-- כאן Alpine x-data עם מרכאות כפולות -->
+                <div class="max-w-3xl mx-auto space-y-4"
+                     x-data="
+                     {
+                        faqs: [
+                          {
                             question: 'האם ניתן לסרוק כל קבוצה?',
                             answer: 'אכן, ניתן לסרוק כל קבוצה. על מנת לסרוק קבוצה פרטית יש להצטרף אליה.'
-                        },
-                        {
+                          },
+                          {
                             question: 'האם ניתן לבחור כמה מילות חיפוש שאני רוצה?',
                             answer: 'וודאי. וגם ניתן לבחור ולהגדיר מילים שונות עבור כל קבוצה. תוכלו לעשות הגדרות חיפוש חכמות כולל ביטוי מדויק או גמיש, צירופי מילים, הוצאת מילים ועוד.'
-                        },
-                        {
+                          },
+                          {
                             question: 'עם איזה פרופיל פייסבוק התוסף משתמש לסריקה?',
                             answer: 'התוסף סורק את הקבוצות בעזרת פרופיל הפייסבוק שמחובר בדפדפן הכרום ולכן ניתן לבחור כל פרופיל פייסבוק וכן להחליף אותו בכל עת.'
-                        },
-                        {
+                          },
+                          {
                             question: 'האם ניתן לשנות את הקבוצות ואת מילות החיפוש מתי שאני רוצה?',
                             answer: 'כן! כל ההגדרות נמצאות בגליון גוגלשיטס שלך, שנמצא אצלך.'
-                        },
-                         {
+                          },
+                          {
                             question: 'האם יש סכנה שפייסבוק יחסום אותי?',
                             answer: 'אנחנו לא נתקלנו מעולם במקרה כזה. הדבר היחיד שעלול לקרות הוא השעייה זמנית (לכמה שעות) לפעולה הספציפית של פתיחת קבוצת פייסבוק. שאר הפעולות, כמו למשל לגלול בפיד ולכתוב לא יושעו, וגם זה נדיר ביותר וקורה רק אם סורקים ללא הפסקות, ובשביל זה אנחנו מגדירים הפסקות בהגדרות התוסף.'
-                        },
-                        {
+                          },
+                          {
                             question: 'האם המחשב שלי צריך להיות דלוק?',
-                            answer: 'התוסף פועל על דפדפן הכרום שלכם ועליו להיות פתוח. אם תסגרו את דפדפן הכרום שעליו פועל התוסף או שתכבו את המחשב, התוסף יפסיק לפעול עד שתדליקו את המחשב. *ישנה אפשרות להפעיל את את התוכנה על מחשב מרוחק, שלי, שפועל 24/7, בתוספת של 100 ש"ח לחודש.'
-                         },
-                        {
-                           question: 'האם ההתראות מגיעות אלינו מיד עם פרסום הפוסט בקבוצה?',
-                           answer: 'ההתראות אינן מיידיות, משום שלוקח זמן להשלים סבב סריקות וצריך גם זמני המתנה, ולכן עבור פוסט שעלה לקבוצה יתכן ונקבל התראה תוך כמה דקות, או לאחר שעה ויותר, תלוי במספר הקבוצות שאנו סורקים ובהגדרות שלנו.'
-                       },
-                       {
+                            answer: 'התוסף פועל על דפדפן הכרום שלכם ועליו להיות פתוח. אם תסגרו את דפדפן הכרום שעליו פועל התוסף או שתכבו את המחשב, התוסף יפסיק לפעול עד שתדליקו את המחשב. ישנה אפשרות להפעיל את התוכנה על מחשב מרוחק (שרת), שפועל 24/7, בתוספת של 100 ש\"ח לחודש.'
+                          },
+                          {
+                            question: 'האם ההתראות מגיעות אלינו מיד עם פרסום הפוסט בקבוצה?',
+                            answer: 'ההתראות אינן מיידיות, משום שלוקח זמן להשלים סבב סריקות וצריך גם זמני המתנה, ולכן עבור פוסט שעלה לקבוצה יתכן ונקבל התראה תוך כמה דקות, או לאחר שעה ויותר, תלוי במספר הקבוצות שאנו סורקים ובהגדרות שלנו.'
+                          },
+                          {
                             question: 'האם אפשר למחוק שורות מהגוגלשיטס עם התוצאות?',
-                            answer: 'הפוסטים שמופיעים בגוגלשיטס משמשים עבור התוסף על מנת שלא ירשום אותם בשנית כשיתקל בהם. מחיקה של שורות מהגוגלשיטס תגרום לרישום חוזר עבור אותם פוסטים במידה וימצאו בתחום הזמן שהגדרנו לחיפוש.'
-                        },
-                        {
+                            answer: 'הפוסטים שמופיעים בגוגלשיטס משמשים את התוסף על מנת שלא ירשום אותם שוב כשייתקל בהם שוב. מחיקה של שורות מהגוגלשיטס תגרום לרישום חוזר עבור אותם פוסטים במידה וימצאו בתחום הזמן שהגדרנו לחיפוש.'
+                          },
+                          {
                             question: 'כמה ימים אחורה התוסף מאתר פוסטים?',
                             answer: 'בהגדרות התוסף ישנה אפשרות להגדיר את מספר הימים שנרצה שהתוסף יגלול אחורה לאיתור פוסטים.'
-                        },
-                         {
+                          },
+                          {
                             question: 'האם ניתן לעשות חיפוש בכל שפה?',
-                            answer: 'כן'
-                        },
-                        {
+                            answer: 'כן, בהחלט.'
+                          },
+                          {
                             question: 'איך ומתי ניתן לבטל את המנוי?',
-                            answer: 'המנוי הוא חודשי והוא מתחדש מדי חודש באותו היום שבוהתחלתם את המנוי. ניתן לפנות אלי עד 24 שעות לפני חידוש המנוי על מנת לבטלו.'
-                        }
-                    ],
-                    selected: null
-                }">
-                   <template x-for="(faq, index) in faqs" :key="index">
-                       <div class="bg-white rounded-lg shadow-md">
-                            <button 
+                            answer: 'המנוי הוא חודשי והוא מתחדש מדי חודש באותו היום שבו התחלתם את המנוי. ניתן לפנות אלי עד 24 שעות לפני חידוש המנוי על מנת לבטלו.'
+                          }
+                        ],
+                        selected: null
+                     }
+                     ">
+                    <template x-for="(faq, index) in faqs" :key="index">
+                        <div class="bg-white rounded-lg shadow-md">
+                            <button
                                 @click="selected !== index ? selected = index : selected = null"
                                 class="w-full p-6 text-right flex justify-between items-center"
                             >
                                 <h3 class="text-xl font-semibold" x-text="faq.question"></h3>
                                 <i class="fas" :class="selected === index ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
                             </button>
-                            
-                                <div 
+                            <div
                                 x-show="selected === index"
                                 x-transition:enter="transition ease-out duration-200"
                                 x-transition:enter-start="opacity-0 transform scale-90"
@@ -203,12 +218,14 @@
                 <div class="max-w-2xl mx-auto text-center">
                     <h2 class="text-3xl font-bold mb-8">מעוניינים להתחיל?</h2>
                     <div class="space-y-4">
-                        <a href="https://wa.me/972546609385" target="_blank" class="inline-flex items-center justify-center bg-green-500 text-white px-6 py-3 rounded-lg text-lg font-semibold hover:bg-green-600 transition-colors">
+                        <a href="https://wa.me/972546609385" target="_blank"
+                           class="inline-flex items-center justify-center bg-green-500 text-white px-6 py-3 rounded-lg text-lg font-semibold hover:bg-green-600 transition-colors">
                             <i class="fab fa-whatsapp ml-2"></i>
                             ליצירת קשר בוואטסאפ
                         </a>
                         <div class="block">
-                            <a href="mailto:fb.tools.zevik@gmail.com" class="inline-flex items-center justify-center bg-indigo-600 text-white px-6 py-3 rounded-lg text-lg font-semibold hover:bg-indigo-700 transition-colors">
+                            <a href="mailto:fb.tools.zevik@gmail.com"
+                               class="inline-flex items-center justify-center bg-indigo-600 text-white px-6 py-3 rounded-lg text-lg font-semibold hover:bg-indigo-700 transition-colors">
                                 <i class="far fa-envelope ml-2"></i>
                                 שליחת מייל
                             </a>
