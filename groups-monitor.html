@@ -112,14 +112,14 @@
         <section id="demo" class="py-16">
             <div class="container mx-auto px-4">
                 <h2 class="text-3xl font-bold text-center mb-12">GM - הכלי המנצח בניטור קבוצות בפייסבוק</h2>
-                <div class="max-w-4xl mx-auto">
+                 <div class="max-w-4xl mx-auto">
                     <img src="/api/placeholder/800/450" alt="Groups Monitor Demo" class="rounded-lg shadow-lg w-full">
-                </div>
+                 </div>
             </div>
         </section>
 
         <!-- FAQ Section -->
-        <section id="faq" class="py-16 bg-gray-50">
+       <section id="faq" class="py-16 bg-gray-50">
             <div class="container mx-auto px-4">
                 <h2 class="text-3xl font-bold text-center mb-12">שאלות נפוצות</h2>
                 <div class="max-w-3xl mx-auto space-y-4" x-data="{
@@ -147,8 +147,8 @@
                         {
                             question: 'האם המחשב שלי צריך להיות דלוק?',
                             answer: 'התוסף פועל על דפדפן הכרום שלכם ועליו להיות פתוח. אם תסגרו את דפדפן הכרום שעליו פועל התוסף או שתכבו את המחשב, התוסף יפסיק לפעול עד שתדליקו את המחשב. *ישנה אפשרות להפעיל את את התוכנה על מחשב מרוחק, שלי, שפועל 24/7, בתוספת של 100 ש"ח לחודש.'
-                         }, 
-                        { 
+                         },
+                        {
                            question: 'האם ההתראות מגיעות אלינו מיד עם פרסום הפוסט בקבוצה?',
                            answer: 'ההתראות אינן מיידיות, משום שלוקח זמן להשלים סבב סריקות וצריך גם זמני המתנה, ולכן עבור פוסט שעלה לקבוצה יתכן ונקבל התראה תוך כמה דקות, או לאחר שעה ויותר, תלוי במספר הקבוצות שאנו סורקים ובהגדרות שלנו.'
                        },
@@ -170,11 +170,8 @@
                         }
                     ],
                     selected: null
-                }"
-                >
-                ...
-                </div>
-                    <template x-for="(faq, index) in faqs" :key="index">
+                }">
+                   <template x-for="(faq, index) in faqs" :key="index">
                        <div class="bg-white rounded-lg shadow-md">
                             <button 
                                 @click="selected !== index ? selected = index : selected = null"
@@ -183,7 +180,7 @@
                                 <h3 class="text-xl font-semibold" x-text="faq.question"></h3>
                                 <i class="fas" :class="selected === index ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
                             </button>
-                           
+                            
                                 <div 
                                 x-show="selected === index"
                                 x-transition:enter="transition ease-out duration-200"
