@@ -13,7 +13,7 @@
         <div class="container mx-auto px-4 py-3">
             <div class="flex items-center justify-between">
                 <div class="logo text-2xl font-bold">Zevik's Tools</div>
-                <nav class="hidden md:flex space-x-6">
+                <nav class="hidden md:flex space-s-6">
                     <a href="index.html" class="hover:text-gray-700">בית</a>
                     <a href="#features" class="hover:text-gray-700">תכונות</a>
                     <a href="#demo" class="hover:text-gray-700">הדגמה</a>
@@ -82,19 +82,49 @@
         <section id="faq" class="py-16">
             <div class="container mx-auto px-4">
                 <h2 class="text-3xl font-bold text-center mb-12">שאלות נפוצות</h2>
-                <div class="max-w-3xl mx-auto space-y-6">
-                    <div class="bg-white rounded-lg shadow-md p-6">
-                        <h3 class="text-xl font-semibold mb-3">האם התוכנה חוקית ותואמת את מדיניות פייסבוק?</h3>
-                        <p class="text-gray-600">כן, התוכנה פועלת בהתאם למדיניות פייסבוק ומשתמשת רק בפעולות מותרות.</p>
-                    </div>
-                    <div class="bg-white rounded-lg shadow-md p-6">
-                        <h3 class="text-xl font-semibold mb-3">איך מתקינים את התוסף?</h3>
-                        <p class="text-gray-600">ההתקנה פשוטה ומהירה. לאחר הרכישה תקבלו הוראות התקנה מפורטות.</p>
-                    </div>
-                    <div class="bg-white rounded-lg shadow-md p-6">
-                        <h3 class="text-xl font-semibold mb-3">האם התוסף יכול לסכן את הקבוצה שלי?</h3>
-                        <p class="text-gray-600">לא, התוסף בטוח לחלוטין ופועל בצורה שקטה ברקע.</p>
-                    </div>
+                <div class="max-w-3xl mx-auto space-y-4">
+                    <template x-data="{ faqs: [
+                        {
+                            question: 'האם ניתן להשתמש אם התוסף עבור כמה קבוצות שאני מנהל/ת?',
+                            answer: 'כן. ובנוסף, עבור כל קבוצה התוסף יצור קובץ נפרד שאליו ישמרו הנתונים.'
+                        },
+                        {
+                            question: 'האם התשובות נאספות באופן אוטומטי לחלוטין?',
+                            answer: 'לא. יש לאסוף את הנתונים בכל פעם לפני שמאשרים את בקשות ההצטרפות לקבוצה, על ידי לחיצה על כפתור Collect.'
+                        },
+                        {
+                            question: 'אם לוחצים על Collect כמה פעמים, האם הנתונים יופיעו בקובץ כמה פעמים?',
+                            answer: 'לא. הנתונים נאספים פעם אחת על מנת לא ליצור כפילויות, אלא אם כן אחת התשובות השתנתה ואז הנתונים ירשמו מחדש.'
+                        },
+                        {
+                            question: 'מה יקרה אם אשנה את שאלות הכניסה לקבוצה?',
+                            answer: 'התוסף יצור עמודות חדשות בגוגלשיטס עם כותרות השאלות החדשות, וירשום את התשובות המתאימות תחתיהן.'
+                        },
+                        {
+                            question: 'האם הנתונים שאספתי יכולים ללכת לאיבוד לאחר סיום המנוי?',
+                            answer: 'לא! הנתונים נשמרים בגוגלשיטס ששייך למנוי, תחת חשבון הגוגל, ותמיד ניתן למצוא אותו ב: https://drive.google.com'
+                        },
+                        {
+                            question: 'אם אני מבטל/ת את התוסף לאחר 4 ימים, האם יהיה לי חיוב כלשהוא?',
+                            answer: 'לא! יש 5 ימי ניסיון ללא עלות וללא התחייבות, וניתן לבטל את המנוי לפני היום החמישי ללא כל חיוב.'
+                        },
+                        {
+                            question: 'לאן ישלחו החשבוניות?',
+                            answer: 'החשבוניות נשלחות באופן אוטומטי לאימייל שאיתו נרשמתם שזהו אותו אימייל של חשבון הכרום תחתיו התקנתם את התוסף. לא ניתן להחליף את האימייל לקבלת חשבונית ללא החלפה של חשבון הכרום שעליו התוסף מותקן ותחתיו חשבון הפייסבוק שלכם פעיל.'
+                        }
+                    ]}" x-init>
+                        <template x-for="(faq, index) in faqs" :key="index">
+                            <div x-data="{ open: false }" class="bg-white rounded-lg shadow-md">
+                                <button @click="open = !open" class="w-full p-6 text-right flex justify-between items-center">
+                                    <h3 class="text-xl font-semibold" x-text="faq.question"></h3>
+                                    <i class="fas" :class="open ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
+                                </button>
+                                <div x-show="open" class="p-6 pt-0">
+                                    <p class="text-gray-600" x-text="faq.answer"></p>
+                                </div>
+                            </div>
+                        </template>
+                    </template>
                 </div>
             </div>
         </section>
@@ -127,5 +157,6 @@
             <p>© 2024 Zevik's Tools</p>
         </div>
     </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/2.8.2/alpine.js"></script>
 </body>
-</html> 
+</html>
