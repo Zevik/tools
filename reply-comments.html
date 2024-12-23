@@ -12,7 +12,9 @@
     <header class="bg-white shadow-md fixed w-full top-0 z-50">
         <div class="container mx-auto px-4 py-3">
             <div class="flex items-center justify-between">
-                <a href="index.html" class="logo text-2xl font-bold">Zevik's Tools</a>
+                <a href="index.html">
+                    <img src="images/logo.png" alt="Zevik's Tools" class="h-8">
+                </a>
                 <nav class="hidden md:flex space-x-6">
                     <a href="index.html" class="hover:text-gray-700">בית</a>
                     <a href="#features" class="hover:text-gray-700">תכונות</a>
@@ -82,7 +84,7 @@
             <div class="container mx-auto px-4">
                 <h2 class="text-3xl font-bold text-center mb-12">שאלות נפוצות</h2>
                 <div class="max-w-3xl mx-auto space-y-4">
-                    <template x-data="{ faqs: [
+                    <div x-data="{ faqs: [
                         {
                             question: 'האם ניתן להגיב לכל פוסט בפייסבוק או רק לפוסטים שלי?',
                             answer: 'ניתן להגיב לכל פוסט, לא משנה אם אתם העלתם אותו או לא.'
@@ -115,7 +117,7 @@
                             question: 'מה ההמלצה לכמות ולקצב תגובות על ידי התוסף?',
                             answer: 'ההמלצה שלי היא להגיב עד כ 100 תגובות ביום, עם הפרש זמן של כ 2-3 דקות בין התגובות.'
                         }
-                    ]}" x-init>
+                    ]}">
                         <template x-for="(faq, index) in faqs" :key="index">
                             <div x-data="{ open: false }" class="bg-white rounded-lg shadow-md">
                                 <button @click="open = !open" class="w-full p-6 text-right flex justify-between items-center">
@@ -127,7 +129,7 @@
                                 </div>
                             </div>
                         </template>
-                    </template>
+                    </div>
                 </div>
             </div>
         </section>
