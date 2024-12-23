@@ -85,43 +85,57 @@
         <section id="faq" class="py-16">
             <div class="container mx-auto px-4">
                 <h2 class="text-3xl font-bold text-center mb-12">שאלות נפוצות</h2>
-                <div x-data="{ faqs: [
-                    {
-                        question: 'האם ניתן להשתמש אם התוסף עבור כמה קבוצות שאני מנהל/ת?',
-                        answer: 'כן. ובנוסף, עבור כל קבוצה התוסף יצור קובץ נפרד שאליו ישמרו הנתונים.'
-                    },
-                    {
-                        question: 'האם התשובות נאספות באופן אוטומטי לחלוטין?',
-                        answer: 'לא. יש לאסוף את הנתונים בכל פעם לפני שמאשרים את בקשות ההצטרפות לקבוצה, על ידי לחיצה על כפתור Collect.'
-                    },
-                    {
-                        question: 'אם לוחצים על Collect כמה פעמים, האם הנתונים יופיעו בקובץ כמה פעמים?',
-                        answer: 'לא. הנתונים נאספים פעם אחת על מנת לא ליצור כפילויות, אלא אם כן אחת התשובות השתנתה ואז הנתונים ירשמו מחדש.'
-                    },
-                    {
-                        question: 'מה יקרה אם אשנה את שאלות הכניסה לקבוצה?',
-                        answer: 'התוסף יצור עמודות חדשות בגוגלשיטס עם כותרות השאלות החדשות, וירשום את התשובות המתאימות תחתיהן.'
-                    },
-                    {
-                        question: 'האם הנתונים שאספתי יכולים ללכת לאיבוד לאחר סיום המנוי?',
-                        answer: 'לא! הנתונים נשמרים בגוגלשיטס ששייך למנוי, תחת חשבון הגוגל, ותמיד ניתן למצוא אותו ב: https://drive.google.com'
-                    },
-                    {
-                        question: 'אם אני מבטל/ת את התוסף לאחר 4 ימים, האם יהיה לי חיוב כלשהוא?',
-                        answer: 'לא! יש 5 ימי ניסיון ללא עלות וללא התחייבות, וניתן לבטל את המנוי לפני היום החמישי ללא כל חיוב.'
-                    },
-                    {
-                        question: 'לאן ישלחו החשבוניות?',
-                        answer: 'החשבוניות נשלחות באופן אוטומטי לאימייל שאיתו נרשמתם שזהו אותו אימייל של חשבון הכרום תחתיו התקנתם את התוסף. לא ניתן להחליף את האימייל לקבלת חשבונית ללא החלפה של חשבון הכרום שעליו התוסף מותקן ותחתיו חשבון הפייסבוק שלכם פעיל.'
-                    }
-                ]}" class="max-w-3xl mx-auto space-y-4">
+                <div class="max-w-3xl mx-auto space-y-4"
+                    x-data="{
+                        faqs: [
+                            {
+                                question: 'האם ניתן להשתמש אם התוסף עבור כמה קבוצות שאני מנהל/ת?',
+                                answer: 'כן. ובנוסף, עבור כל קבוצה התוסף יצור קובץ נפרד שאליו ישמרו הנתונים.'
+                            },
+                            {
+                                question: 'האם התשובות נאספות באופן אוטומטי לחלוטין?',
+                                answer: 'לא. יש לאסוף את הנתונים בכל פעם לפני שמאשרים את בקשות ההצטרפות לקבוצה, על ידי לחיצה על כפתור Collect.'
+                            },
+                            {
+                                question: 'אם לוחצים על Collect כמה פעמים, האם הנתונים יופיעו בקובץ כמה פעמים?',
+                                answer: 'לא. הנתונים נאספים פעם אחת על מנת לא ליצור כפילויות, אלא אם כן אחת התשובות השתנתה ואז הנתונים ירשמו מחדש.'
+                            },
+                            {
+                                question: 'מה יקרה אם אשנה את שאלות הכניסה לקבוצה?',
+                                answer: 'התוסף יצור עמודות חדשות בגוגלשיטס עם כותרות השאלות החדשות, וירשום את התשובות המתאימות תחתיהן.'
+                            },
+                            {
+                                question: 'האם הנתונים שאספתי יכולים ללכת לאיבוד לאחר סיום המנוי?',
+                                answer: 'לא! הנתונים נשמרים בגוגלשיטס ששייך למנוי, תחת חשבון הגוגל, ותמיד ניתן למצוא אותו ב: https://drive.google.com'
+                            },
+                            {
+                                question: 'אם אני מבטל/ת את התוסף לאחר 4 ימים, האם יהיה לי חיוב כלשהוא?',
+                                answer: 'לא! יש 5 ימי ניסיון ללא עלות וללא התחייבות, וניתן לבטל את המנוי לפני היום החמישי ללא כל חיוב.'
+                            },
+                            {
+                                question: 'לאן ישלחו החשבוניות?',
+                                answer: 'החשבוניות נשלחות באופן אוטומטי לאימייל שאיתו נרשמתם שזהו אותו אימייל של חשבון הכרום תחתיו התקנתם את התוסף. לא ניתן להחליף את האימייל לקבלת חשבונית ללא החלפה של חשבון הכרום שעליו התוסף מותקן ותחתיו חשבון הפייסבוק שלכם פעיל.'
+                            }
+                        ],
+                        selected: null
+                    }"
+                >
                     <template x-for="(faq, index) in faqs" :key="index">
-                        <div x-data="{ open: false }" class="bg-white rounded-lg shadow-md">
-                            <button @click="open = !open" class="w-full p-6 text-right flex justify-between items-center">
+                        <div class="bg-white rounded-lg shadow-md">
+                            <button 
+                                @click="selected !== index ? selected = index : selected = null"
+                                class="w-full p-6 text-right flex justify-between items-center"
+                            >
                                 <h3 class="text-xl font-semibold" x-text="faq.question"></h3>
-                                <i class="fas" :class="open ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
+                                <i class="fas" :class="selected === index ? 'fa-chevron-up' : 'fa-chevron-down'"></i>
                             </button>
-                            <div x-show="open" class="p-6 pt-0">
+                            <div 
+                                x-show="selected === index"
+                                x-transition:enter="transition ease-out duration-200"
+                                x-transition:enter-start="opacity-0 transform scale-90"
+                                x-transition:enter-end="opacity-100 transform scale-100"
+                                class="p-6 pt-0"
+                            >
                                 <p class="text-gray-600" x-text="faq.answer"></p>
                             </div>
                         </div>
@@ -146,6 +160,7 @@
                                 ליצירת קשר במייל
                             </a>
                         </div>
+</html>
                     </div>
                 </div>
             </div>
@@ -155,6 +170,11 @@
     <!-- Footer -->
     <footer class="bg-gray-800 text-white py-8">
         <div class="container mx-auto px-4 text-center">
+            <p>© 2024 Zevik's Tools</p>
+        </div>
+    </footer>
+</body>
+</html>
             <p>© 2024 Zevik's Tools</p>
         </div>
     </footer>
